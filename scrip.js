@@ -47,32 +47,43 @@ const getHumanChoice = ()=>{
 Write the code for your playRound function to console.log a string value representing the round winner, such as: “You lose! Paper beats Rock”.
 Increment the humanScore or computerScore variable based on the roud winner.
 -------------------  */
-
-const playRound = (humanChoice, computerChoice)=>{ 
-    console.log("human:",humanChoice , "computer:", computerChoice);
-    if (humanChoice === "paper" && computerChoice === "rock") {
-        humanScore += 1;
-        console.log("paper beats rock","human wins with:",humanScore);
-    }else if (computerChoice === "paper" && humanChoice === "rock") {
-        computerScore += 1;
-        console.log("paper beats rock, computer wins with:", computerScore);
-    }else if (humanChoice === "scissors" && computerChoice === "paper") {
-        humanScore += 1;
-        console.log("scissor cuts paper, human wins with:", humanScore);
-    }else if (computerChoice === "scissors" && humanChoice === "paper") {
-        computerScore += 1;
-        console.log("scissor cuts paper, computer wins with:", computerScore);
-    }else if (humanChoice === "scissors" && computerChoice === "rock") {
-        computerScore += 1;
-        console.log("rock beats scissor, computer wins with:", computerScore);
-    }else if (computerChoice === "scissors" && humanChoice === "rock") {
-        humanScore += 1;
-        console.log("rock beats scissor, human wins with:", humanScore);
-    }else if (humanChoice === computerChoice) {
-        console.log("It is a draw , no one won human:", humanScore, "computer:",computerScore);
+const playGame = ()=>{
+    for (let i = 0; i < 5; i++) {
+        const playRound = (humanChoice, computerChoice)=>{ 
+                console.log("human:",humanChoice , "computer:", computerChoice);
+            if (humanChoice === "paper" && computerChoice === "rock") {
+                humanScore += 1;
+                console.log("paper beats rock","human wins with:",humanScore);
+            }else if (computerChoice === "paper" && humanChoice === "rock") {
+                computerScore += 1;
+            console.log("paper beats rock, computer wins with:", computerScore);
+            }else if (humanChoice === "scissors" && computerChoice === "paper") {
+                humanScore += 1;
+                console.log("scissor cuts paper, human wins with:", humanScore);
+            }else if (computerChoice === "scissors" && humanChoice === "paper") {
+                computerScore += 1;
+                console.log("scissor cuts paper, computer wins with:", computerScore);
+            }else if (humanChoice === "scissors" && computerChoice === "rock") {
+                computerScore += 1;
+                console.log("rock beats scissor, computer wins with:", computerScore);
+            }else if (computerChoice === "scissors" && humanChoice === "rock") {
+            humanScore += 1;
+            console.log("rock beats scissor, human wins with:", humanScore);
+            }else if (humanChoice === computerChoice) {
+            console.log("It is a draw , no one won; human:", humanScore, "computer:",computerScore);
+            }else {
+            //incase of wrong input.
+            console.log("Invalid Input");
+            }
+        }
+        const computerSelect = getComputerChoice();
+        const humanSelect = getHumanChoice();
+        playRound(humanSelect, computerSelect);
+        //for recording the scores
+            console.log("Final scores:", "human got: "+humanScore,"computer got: "+computerScore);
+        
     }
+    
 }
-const computerSelect = getComputerChoice();
-const humanSelect = getHumanChoice();
-playRound( humanSelect, computerSelect);
-console.log(playRound());
+
+playGame();
