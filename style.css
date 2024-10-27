@@ -1,0 +1,55 @@
+body {
+    margin: 0;
+    background-color: black;
+    color: red;
+    border: 2px solid yellowgreen;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+h1 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 32px;
+    color: antiquewhite;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50ch;
+    width: 100%;
+    padding: 20px;
+    flex-direction: column;
+    
+}
+
+button {
+    padding: 4px;
+    width: 80px;
+    height: 30px;
+    margin: 20px;
+    background-color: aqua;
+    color: orangered;
+    border-radius: 3.8px;
+    box-shadow: 2px 4px 2px rgba(0, 0, 100, .3);
+    font-weight: bold;
+    -webkit-border-radius: 3.8px;
+    -moz-border-radius: 3.8px;
+    -ms-border-radius: 3.8px;
+    -o-border-radius: 3.8px;
+    
+}
+
+.result-display {
+    font-family: sans-serif;
+    color: green;
+    font-weight: bold;
+}
+
+span {
+    color: red;
+    font-size: 16px;
+}
